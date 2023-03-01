@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply flex-col items-center justify-center    
+}
+body main {
+    @apply max-w-5xl w-full
+}
