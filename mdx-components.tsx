@@ -26,8 +26,8 @@ function H2({ children }: MDXComponents) {
   )
 }
 
-function Code({ children, className }: MDXComponents) {
-
+function Code({ children }: MDXComponents) {
+  return children
 }
 
 
