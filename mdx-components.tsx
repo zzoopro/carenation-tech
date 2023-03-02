@@ -1,7 +1,6 @@
+import CodeBlock from "@/components/Codeblock";
 import { Struct, ArticleMeta } from "@/types/types";
 import type { MDXComponents } from 'mdx/types'
-
-
 
 function H2({ children }: MDXComponents) {  
   let meta: ArticleMeta = {}
@@ -26,8 +25,8 @@ function H2({ children }: MDXComponents) {
   )
 }
 
-function Code({ children }: MDXComponents) {
-  return children
+function Code({ children, className }: any) {
+  return <CodeBlock children={children} className={className}/>
 }
 
 
