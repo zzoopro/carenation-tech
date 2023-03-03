@@ -1,14 +1,10 @@
 import dynamic from "next/dynamic"
 
 
-const Post = () => {
-    const Post = dynamic(() => import(`../../../markdown/articles/${"intro"}.mdx`))
+const Post = ({params}: any) => {
+    const Post = dynamic(() => import(`../../../markdown/articles/${params.slug}.mdx`))
     
-    return (
-        <div>
-            <Post />
-        </div>
-    )
+    return <Post />            
 }
 
 export default Post

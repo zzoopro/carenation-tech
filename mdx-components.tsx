@@ -1,10 +1,11 @@
-import CodeBlock from "@/components/Codeblock";
-import { Struct, ArticleMeta } from "@/types/types";
+import { ArticleMeta } from "@/types/types";
 import type { MDXComponents } from 'mdx/types'
+import Prism from 'prismjs';
+import 'prismjs/components/prism-javascript';
 
 function H2({ children }: MDXComponents) {  
   let meta: ArticleMeta = {}
-  const reStructed = children.toString().split("\n").forEach((field: string) => {
+  children.toString().split("\n").forEach((field: string) => {
     const [key, value] = field.split(":")
     meta[key] = value?.trim()
   })   
@@ -19,22 +20,25 @@ function H2({ children }: MDXComponents) {
           <span>{meta.author}</span>
           <span>{meta.position}</span>
         </div>        
-        <span>{meta.date}</span>
+        <span>{meta.date as String}</span>
       </div>
     </section>
   )
 }
 
 function Code({ children, className }: any) {
-  return <CodeBlock children={children} className={className}/>
+  const language = className?.replace(/language-/, '') || 'javascript';
+  const highlightedCode = Prism.highlight(children, Prism.languages[language], language);
+  
+  return (
+    <pre className={`language-${language}`}>
+      <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+    </pre>
+  );
 }
 
-
-// This file is required to use MDX in `app` directory.
 export function useMDXComponents(components: MDXComponents): MDXComponents | any {
   return {
-    // Allows customizing built-in components, e.g. to add styling.
-    // h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
     h2: H2,
     code: Code,
     ...components,

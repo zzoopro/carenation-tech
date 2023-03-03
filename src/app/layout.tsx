@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 
 import "../globals.css"
+import 'prismjs/themes/prism-okaidia.css' 
 
 export const metadata = {
   title: 'Create Next App',
