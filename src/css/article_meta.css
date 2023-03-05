@@ -1,0 +1,82 @@
+#article_meta {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #d9d9d9;
+    color: #333;
+}
+
+#article_title {
+    font-size: 36px;
+    font-weight: bold;    
+}
+
+#article_description {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
+
+#article_sub_info {
+    display: flex;
+    flex-direction: column;
+}
+
+#article_author_info {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#article_author {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#article_position {
+    color: #555;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#article_time {
+    margin-top: 2px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 300;
+}
+
+
+/** 본문 **/
+#post_wrap pre {
+    margin: 10px 0px;    
+}
+#post_wrap h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#post_wrap h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#post_wrap p {
+    font-size: 17px;
+    margin: 10px 0px;
+}
+
+#post_wrap strong {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+#post_wrap hr{
+    border: none;
+}

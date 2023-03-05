@@ -13,16 +13,21 @@ const Posts = () => {
     })
 
     return (        
-        <ul className="flex flex-col space-y-10 mt-10">                        
+        <ul className="flex flex-col space-y-[80px] my-20">                        
             {metas.map((meta, idx) => {
                 return (
                     <Link href={`articles/${meta.path}`} key={idx}>
-                        <div  className="flex justify-between">
-                            <img src={meta.thumnail} alt="" className="max-w-[200px] w-full"/>
-                            <div className="w-2/5">
-                                <h3>{meta.title}</h3>
-                                <h4>{meta.description}</h4>
-                                <h5>{DateToString(meta.date as Date)}</h5>
+                        <div  className="group flex justify-between w-full h-[240px]">
+                            {
+                                meta.thumnail ? 
+                                <img src={meta.thumnail} alt={meta.title} className="h-full aspect-square rounded-lg group-hover:-translate-y-3 transition"/> :
+                                <div className="h-full aspect-square bg-slate-600 rounded-lg group-hover:-translate-y-3 transition"></div>
+                            }
+                            
+                            <div className="flex flex-col w-[70%]">
+                                <h3 className="text-4xl font-semibold text-slate-800 group-hover:text-blue-600">{meta.title}</h3>
+                                <h4 className="text-md text-slate-500 font-medium mt-6">{meta.description}</h4>
+                                <h5 className="text-sm text-slate-400 font-light mt-2">{DateToString(meta.date as Date)}</h5>
                             </div>
                         </div>
                     </Link>

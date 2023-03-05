@@ -1,6 +1,6 @@
 import Header from '../components/Header'
 
-import "../globals.css"
+import "../css/globals.css"
 import 'prismjs/themes/prism-okaidia.css' 
 
 export const metadata = {

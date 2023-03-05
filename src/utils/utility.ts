@@ -3,5 +3,5 @@ export const cls = (...classname: string[]) => {
 }
 
 export const DateToString = (date: Date) => {
-    return date.toISOString().slice(0, 10)
+    return date.toISOString().slice(0, 10).replaceAll("-", ".")
 }

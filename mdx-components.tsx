@@ -3,6 +3,7 @@ import type { MDXComponents } from 'mdx/types'
 import Prism from 'prismjs';
 import 'prismjs/components/prism-javascript';
 
+
 function H2({ children }: MDXComponents) {  
   let meta: ArticleMeta = {}
   children.toString().split("\n").forEach((field: string) => {
@@ -11,16 +12,16 @@ function H2({ children }: MDXComponents) {
   })   
   
   return (
-    <section style={{marginBottom: 50, backgroundColor: "pink"}}>
+    <section id="article_meta">
       <img src={meta.thumnail} alt="" />
-      <h1 id="article_title">{meta.title}</h1>
-      <p id="description">{meta.description}</p>
-      <div id="article_author_info" className="flex flex-col">
-        <div>
-          <span>{meta.author}</span>
-          <span>{meta.position}</span>
+      <span id="article_title">{meta.title}</span>
+      <span id="article_descrispantion">{meta.description}</span>
+      <div id="article_sub_info">
+        <div id="article_author_info">
+          <span id="article_author">{meta.author}</span>
+          <span id="article_position">{meta.position}</span>
         </div>        
-        <span>{meta.date as String}</span>
+        <span id="article_time">{meta.date as String}</span>
       </div>
     </section>
   )
